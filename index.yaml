@@ -4,6 +4,53 @@ entries:
   - annotations:
       licenses: MIT
     apiVersion: v2
+    appVersion: 0.11.3
+    created: "2026-09-11T15:56:16.479795442Z"
+    dependencies:
+    - condition: ollama.enabled
+      import-values:
+      - child: service
+        parent: ollama.service
+      name: ollama
+      repository: https://otwld.github.io/ollama-helm/
+      version: '>=0.24.0'
+    - condition: pipelines.enabled
+      import-values:
+      - child: service
+        parent: pipelines.service
+      name: pipelines
+      repository: https://helm.openwebui.com
+      version: '>=0.10.1'
+    - condition: tika.enabled
+      name: tika
+      repository: https://apache.jfrog.io/artifactory/tika
+      version: '>=2.9.0'
+    - condition: terminals.enabled
+      name: terminals
+      repository: https://helm.openwebui.com
+      version: '>=0.4.0'
+    description: "Open WebUI: A User-Friendly Web Interface for Chat Interactions
+      \U0001F44B"
+    digest: 43b10aaa9dab995ba3286514d6f63c0639d78bd7ac2b8993971fc50edd0d532d
+    home: https://www.openwebui.com/
+    icon: https://raw.githubusercontent.com/open-webui/open-webui/main/static/favicon.png
+    keywords:
+    - llm
+    - chat
+    - web-ui
+    - open-webui
+    name: open-webui
+    sources:
+    - https://github.com/open-webui/helm-charts
+    - https://github.com/open-webui/open-webui/pkgs/container/open-webui
+    - https://github.com/otwld/ollama-helm/
+    - https://hub.docker.com/r/ollama/ollama
+    urls:
+    - open-webui-16.5.0.tgz
+    version: 16.5.0
+  - annotations:
+      licenses: MIT
+    apiVersion: v2
     appVersion: 0.11.0
     created: "2026-08-15T08:04:09.701429344Z"
     dependencies:
@@ -5145,6 +5192,26 @@ entries:
       licenses: MIT
     apiVersion: v2
     appVersion: alpha
+    created: "2026-09-11T15:56:16.639428023Z"
+    description: 'Pipelines: UI-Agnostic OpenAI API Plugin Framework'
+    digest: cffa0e461636472ba5b2866dd29fdd3203aa97451cdc5800366f430ec94ca343
+    home: https://github.com/open-webui/pipelines
+    icon: https://github.com/open-webui/pipelines/raw/main/header.png
+    keywords:
+    - llm
+    - chat
+    - web-ui
+    name: pipelines
+    sources:
+    - https://github.com/open-webui/helm-charts
+    - https://github.com/open-webui/pipelines/pkgs/container/pipelines
+    urls:
+    - pipelines-0.12.2.tgz
+    version: 0.12.2
+  - annotations:
+      licenses: MIT
+    apiVersion: v2
+    appVersion: alpha
     created: "2026-06-29T10:11:09.57192487Z"
     description: 'Pipelines: UI-Agnostic OpenAI API Plugin Framework'
     digest: 5b03706bbc192da5bbde5260529021119328e2429592b2b8119fa7143313c2bd
@@ -5426,6 +5493,28 @@ entries:
       licenses: MIT
     apiVersion: v2
     appVersion: 0.0.3
+    created: "2026-09-11T15:56:16.771602626Z"
+    description: 'Terminals: Kubernetes operator and orchestrator for per-user Open
+      Terminal instances'
+    digest: 9a8f0e8c870130536166046d92cefd149a3ea8962a9657e9419eef87ab40b8e4
+    home: https://github.com/open-webui/open-terminal
+    icon: https://raw.githubusercontent.com/open-webui/open-webui/main/static/favicon.png
+    keywords:
+    - terminals
+    - open-terminal
+    - open-webui
+    name: terminals
+    sources:
+    - https://github.com/open-webui/helm-charts
+    - https://github.com/open-webui/open-terminal
+    - https://github.com/open-webui/terminals
+    urls:
+    - terminals-0.7.0.tgz
+    version: 0.7.0
+  - annotations:
+      licenses: MIT
+    apiVersion: v2
+    appVersion: 0.0.3
     created: "2026-06-29T10:11:09.727915089Z"
     description: 'Terminals: Kubernetes operator and orchestrator for per-user Open
       Terminal instances'
@@ -5487,4 +5576,4 @@ entries:
     urls:
     - terminals-0.2.0.tgz
     version: 0.2.0
-generated: "2026-08-15T08:04:09.701926754Z"
+generated: "2026-09-11T15:56:16.772112826Z"
